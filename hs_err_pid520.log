@@ -1,0 +1,254 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd406744db, pid=520, tid=0x00000000000003cc
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_151-b12) (build 1.8.0_151-b12)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.151-b12 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [nvcuda.dll+0x3944db]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000309e000):  JavaThread "main" [_thread_in_native, id=972, stack(0x00000000030e0000,0x00000000031e0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000007845
+
+Registers:
+RAX=0x0000000027b948f0, RBX=0x0000000000000002, RCX=0x00007ffd406744db, RDX=0x0000000000007845
+RSP=0x00000000031df1c8, RBP=0x0000000027b948e0, RSI=0x0000000027b758d0, RDI=0x0000000000000014
+R8 =0x0000000000000004, R9 =0x00007ffd402e0000, R10=0x0000000000007845, R11=0x0000000027b948f0
+R12=0x0000000020966130, R13=0x0000000000000001, R14=0x0000000027bb07a0, R15=0x0000000027bb07a0
+RIP=0x00007ffd406744db, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x00000000031df1c8)
+0x00000000031df1c8:   00007ffd40420d42 00000000204375b0
+0x00000000031df1d8:   0000000027b758d0 0000c7093982f710
+0x00000000031df1e8:   00000000031df260 00000000204375b0
+0x00000000031df1f8:   00007ffd403100bb 0000000000000003
+0x00000000031df208:   0000000000000000 0000000000000000
+0x00000000031df218:   0000000027b758d0 0000000000000001
+0x00000000031df228:   0000000020966130 0000000000000002
+0x00000000031df238:   00007ffd40447042 000000001c9dc718
+0x00000000031df248:   0000000027b758d0 000000000000000a
+0x00000000031df258:   0000000000000001 0000000000000001
+0x00000000031df268:   000000000000000a 0000000027b758d0
+0x00000000031df278:   00007ffd4030faf8 0000000000000000
+0x00000000031df288:   0000000027b758d0 000000000000000a
+0x00000000031df298:   0000000000000001 0000000000000001
+0x00000000031df2a8:   000000000000000a 0000000000000001
+0x00000000031df2b8:   0000000000000001 0000000000000028 
+
+Instructions: (pc=0x00007ffd406744db)
+0x00007ffd406744bb:   7f 00 c3 66 90 4c 8b 02 0f b7 4a 08 44 0f b6 4a
+0x00007ffd406744cb:   0a 4c 89 00 66 89 48 08 44 88 48 0a 49 8b cb c3
+0x00007ffd406744db:   8b 0a 89 08 c3 8b 0a 44 0f b6 42 04 89 08 44 88
+0x00007ffd406744eb:   40 04 c3 66 90 8b 0a 44 0f b7 42 04 89 08 66 44 
+
+
+Register to memory mapping:
+
+RAX=0x0000000027b948f0 is an unknown value
+RBX=0x0000000000000002 is an unknown value
+RCX=0x00007ffd406744db is an unknown value
+RDX=0x0000000000007845 is an unknown value
+RSP=0x00000000031df1c8 is pointing into the stack for thread: 0x000000000309e000
+RBP=0x0000000027b948e0 is an unknown value
+RSI=0x0000000027b758d0 is an unknown value
+RDI=0x0000000000000014 is an unknown value
+R8 =0x0000000000000004 is an unknown value
+R9 =0x00007ffd402e0000 is an unknown value
+R10=0x0000000000007845 is an unknown value
+R11=0x0000000027b948f0 is an unknown value
+R12=0x0000000020966130 is an unknown value
+R13=0x0000000000000001 is an unknown value
+R14=0x0000000027bb07a0 is an unknown value
+R15=0x0000000027bb07a0 is an unknown value
+
+
+Stack: [0x00000000030e0000,0x00000000031e0000],  sp=0x00000000031df1c8,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [nvcuda.dll+0x3944db]
+C  [nvcuda.dll+0x140d42]
+C  [nvcuda.dll+0x300bb]
+C  [nvcuda.dll+0x2faf8]
+C  [nvcuda.dll+0x2f9d4]
+C  [nvcuda.dll+0x1b7f32]
+C  [JCudaDriver-0.8.0-windows-x86_64.dll+0x83b9]
+C  0x00000000032f7934
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jcuda.driver.JCudaDriver.cuLaunchKernelNative(Ljcuda/driver/CUfunction;IIIIIIILjcuda/driver/CUstream;Ljcuda/Pointer;Ljcuda/Pointer;)I+0
+j  jcuda.driver.JCudaDriver.cuLaunchKernel(Ljcuda/driver/CUfunction;IIIIIIILjcuda/driver/CUstream;Ljcuda/Pointer;Ljcuda/Pointer;)I+18
+j  helloworld.HelloWorld.helloworld(Ljcuda/Pointer;I)F+63
+j  helloworld.HelloWorld.main([Ljava/lang/String;)V+48
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001e726000 JavaThread "Service Thread" daemon [_thread_blocked, id=13756, stack(0x00000000200e0000,0x00000000201e0000)]
+  0x000000001e68e800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=708, stack(0x000000001ffe0000,0x00000000200e0000)]
+  0x000000001e68e000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=7264, stack(0x000000001fee0000,0x000000001ffe0000)]
+  0x000000001e686000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=3904, stack(0x000000001fde0000,0x000000001fee0000)]
+  0x000000001e680800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=12788, stack(0x000000001fce0000,0x000000001fde0000)]
+  0x000000001e67c000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2464, stack(0x000000001fbe0000,0x000000001fce0000)]
+  0x000000001e67b800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4488, stack(0x000000001fae0000,0x000000001fbe0000)]
+  0x000000001e673000 JavaThread "Finalizer" daemon [_thread_blocked, id=7516, stack(0x000000001f8d0000,0x000000001f9d0000)]
+  0x000000001cfad800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7664, stack(0x000000001f7d0000,0x000000001f8d0000)]
+=>0x000000000309e000 JavaThread "main" [_thread_in_native, id=972, stack(0x00000000030e0000,0x00000000031e0000)]
+
+Other Threads:
+  0x000000001cfa6000 VMThread [stack: 0x000000001f6d0000,0x000000001f7d0000] [id=13272]
+  0x000000001e6cb800 WatcherThread [stack: 0x00000000201e0000,0x00000000202e0000] [id=6956]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 76288K, used 3932K [0x000000076b000000, 0x0000000770500000, 0x00000007c0000000)
+  eden space 65536K, 6% used [0x000000076b000000,0x000000076b3d7118,0x000000076f000000)
+  from space 10752K, 0% used [0x000000076fa80000,0x000000076fa80000,0x0000000770500000)
+  to   space 10752K, 0% used [0x000000076f000000,0x000000076f000000,0x000000076fa80000)
+ ParOldGen       total 175104K, used 0K [0x00000006c1000000, 0x00000006cbb00000, 0x000000076b000000)
+  object space 175104K, 0% used [0x00000006c1000000,0x00000006c1000000,0x00000006cbb00000)
+ Metaspace       used 3719K, capacity 4856K, committed 5120K, reserved 1056768K
+  class space    used 393K, capacity 424K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00000000126a0000,0x0000000012ea0000] byte_map_base: 0x000000000f098000
+
+Marking Bits: (ParMarkBitMap*) 0x000000007297d850
+ Begin Bits: [0x0000000013df0000, 0x0000000017db0000)
+ End Bits:   [0x0000000017db0000, 0x000000001bd70000)
+
+Polling page: 0x00000000017d0000
+
+CodeCache: size=245760Kb used=1290Kb max_used=1290Kb free=244469Kb
+ bounds [0x00000000032e0000, 0x0000000003550000, 0x00000000122e0000]
+ total_blobs=382 nmethods=107 adapters=189
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.492 Thread 0x000000001e68e800  101       3       java.util.zip.ZipCoder::getBytes (192 bytes)
+Event: 0.493 Thread 0x000000001e68e800 nmethod 101 0x0000000003420010 code [0x00000000034203c0, 0x0000000003422678]
+Event: 0.493 Thread 0x000000001e68e800  102       3       java.util.zip.ZipCoder::encoder (35 bytes)
+Event: 0.493 Thread 0x000000001e68e800 nmethod 102 0x000000000341eb50 code [0x000000000341ece0, 0x000000000341f368]
+Event: 0.493 Thread 0x000000001e68e800  103       3       java.nio.charset.CharsetEncoder::reset (11 bytes)
+Event: 0.493 Thread 0x000000001e68e800 nmethod 103 0x000000000341e710 code [0x000000000341e860, 0x000000000341ea90]
+Event: 0.493 Thread 0x000000001e68e800  104       3       java.nio.charset.CharsetEncoder::implReset (1 bytes)
+Event: 0.493 Thread 0x000000001e68e800 nmethod 104 0x000000000341e410 code [0x000000000341e560, 0x000000000341e6b0]
+Event: 0.658 Thread 0x000000001e68e800  106       1       java.net.URLStreamHandler::getDefaultPort (2 bytes)
+Event: 0.658 Thread 0x000000001e68e800 nmethod 106 0x000000000341e150 code [0x000000000341e2a0, 0x000000000341e3b0]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.024 Thread 0x000000000309e000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076b007ca8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u151\9699\hotspot\
+Event: 0.024 Thread 0x000000000309e000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076b007f90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u151\9699\hotspot\src\share\vm\prims
+
+Events (10 events):
+Event: 0.656 loading class jcuda/driver/CUmodule
+Event: 0.656 loading class jcuda/driver/CUmodule done
+Event: 0.658 loading class jcuda/driver/CUfunction
+Event: 0.658 loading class jcuda/driver/CUfunction done
+Event: 0.658 loading class java/util/Random
+Event: 0.658 loading class java/util/Random done
+Event: 0.659 loading class java/nio/HeapFloatBuffer
+Event: 0.659 loading class java/nio/HeapFloatBuffer done
+Event: 0.659 loading class java/nio/HeapIntBuffer
+Event: 0.659 loading class java/nio/HeapIntBuffer done
+
+
+Dynamic libraries:
+0x00007ff6f7920000 - 0x00007ff6f7957000 	C:\Program Files\Java\jdk1.8.0_151\jre\bin\javaw.exe
+0x00007ffd818d0000 - 0x00007ffd81aab000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd81310000 - 0x00007ffd813be000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd7ddf0000 - 0x00007ffd7e039000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd81750000 - 0x00007ffd817f1000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd7f0f0000 - 0x00007ffd7f18d000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd81870000 - 0x00007ffd818c9000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd813c0000 - 0x00007ffd814e5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd814f0000 - 0x00007ffd8163a000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd7e0a0000 - 0x00007ffd7e0be000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd812c0000 - 0x00007ffd812e7000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd7e210000 - 0x00007ffd7e397000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd7e170000 - 0x00007ffd7e20a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd7ed30000 - 0x00007ffd7ee26000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd6e240000 - 0x00007ffd6e4a7000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.483_none_26002d27e7c744a2\COMCTL32.dll
+0x00007ffd807e0000 - 0x00007ffd80ad9000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd7e3a0000 - 0x00007ffd7e40a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd807a0000 - 0x00007ffd807cd000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000071dd0000 - 0x0000000071ea2000 	C:\Program Files\Java\jdk1.8.0_151\jre\bin\msvcr100.dll
+0x0000000072160000 - 0x00000000729fd000 	C:\Program Files\Java\jdk1.8.0_151\jre\bin\server\jvm.dll
+0x00007ffd807d0000 - 0x00007ffd807d8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffd7c1d0000 - 0x00007ffd7c1f3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd7a170000 - 0x00007ffd7a179000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd79690000 - 0x00007ffd7969a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd81800000 - 0x00007ffd8186c000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd7c1a0000 - 0x00007ffd7c1cb000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ffd7ece0000 - 0x00007ffd7ed29000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000073920000 - 0x000000007392f000 	C:\Program Files\Java\jdk1.8.0_151\jre\bin\verify.dll
+0x00000000738f0000 - 0x0000000073919000 	C:\Program Files\Java\jdk1.8.0_151\jre\bin\java.dll
+0x00000000738d0000 - 0x00000000738e6000 	C:\Program Files\Java\jdk1.8.0_151\jre\bin\zip.dll
+0x00007ffd7f300000 - 0x00007ffd80736000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffd7f040000 - 0x00007ffd7f0ea000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffd7e5e0000 - 0x00007ffd7ecd1000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ffd80ba0000 - 0x00007ffd80bf1000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffd7dd40000 - 0x00007ffd7dd51000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffd7dda0000 - 0x00007ffd7ddec000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ffd7dd80000 - 0x00007ffd7dd95000 	C:\WINDOWS\System32\profapi.dll
+0x00007ffd76570000 - 0x00007ffd765d9000 	C:\Users\Fabrice\AppData\Local\Temp\JCudaRuntime-0.8.0-windows-x86_64.dll
+0x00007ffd76520000 - 0x00007ffd76561000 	C:\Users\Fabrice\AppData\Local\Temp\JCudaDriver-0.8.0-windows-x86_64.dll
+0x00007ffd402e0000 - 0x00007ffd41022000 	C:\WINDOWS\SYSTEM32\nvcuda.dll
+0x00007ffd80cb0000 - 0x00007ffd810eb000 	C:\WINDOWS\System32\SETUPAPI.dll
+0x00007ffd64690000 - 0x00007ffd647af000 	C:\WINDOWS\SYSTEM32\nvfatbinaryLoader.dll
+0x00007ffd7c5c0000 - 0x00007ffd7c655000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007ffd7c940000 - 0x00007ffd7c968000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x00007ffd7e040000 - 0x00007ffd7e096000 	C:\WINDOWS\System32\WINTRUST.dll
+0x00007ffd7dd60000 - 0x00007ffd7dd71000 	C:\WINDOWS\System32\MSASN1.dll
+0x00007ffd7e410000 - 0x00007ffd7e5d9000 	C:\WINDOWS\System32\CRYPT32.dll
+0x00007ffd52ab0000 - 0x00007ffd52f30000 	C:\WINDOWS\system32\nvapi64.dll
+0x00007ffd810f0000 - 0x00007ffd81235000 	C:\WINDOWS\System32\ole32.dll
+0x00007ffd7cc90000 - 0x00007ffd7cd34000 	C:\WINDOWS\SYSTEM32\dxgi.dll
+0x00007ffd750a0000 - 0x00007ffd75249000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: helloworld.HelloWorld
+java_class_path (initial): C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\ext\zipfs.jar;F:\GPU\Workspace\NBody\CudaTutorial\target\classes;C:\Users\Fabrice\.m2\repository\org\jcuda\jcuda\0.8.0\jcuda-0.8.0.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcuda-natives\0.8.0\jcuda-natives-0.8.0-windows-x86_64.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcublas\0.8.0\jcublas-0.8.0.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcublas-natives\0.8.0\jcublas-natives-0.8.0-windows-x86_64.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcufft\0.8.0\jcufft-0.8.0.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcufft-natives\0.8.0\jcufft-natives-0.8.0-windows-x86_64.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcusparse\0.8.0\jcusparse-0.8.0.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcusparse-natives\0.8.0\jcusparse-natives-0.8.0-windows-x86_64.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcusolver\0.8.0\jcusolver-0.8.0.jar;C:\Users\Fabrice\.m2\repository\org\jcuda\jcusolver-natives\0.8.0\jcusolver-natives-0.8.
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jdk1.8.0_151/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_151/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_151/bin/../jre/lib/amd64;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\Hostx64\x64;C:\Program Files\Java\jdk1.8.0_151\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\include;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\crt;;C:\Outils\eclipse-oxygen\eclipse;
+USERNAME=Fabrice
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 1 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 15063 (10.0.15063.296)
+
+CPU:total 12 (initial active 12) (12 cores per cpu, 1 threads per core) family 23 model 1 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 16706172k(12608176k free), swap 19720828k(13308820k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.151-b12) for windows-amd64 JRE (1.8.0_151-b12), built on Sep  5 2017 19:33:46 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon Nov 13 21:06:23 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

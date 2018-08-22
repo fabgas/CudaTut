@@ -1,0 +1,23 @@
+---Sum : 3.21 ----
+Reduction of 16777216 elements
+JCuda 5,141ms Copy 5,696ms 
+cuda3.51841498E13
+Calcul exact :3.51843679E13
+Percent :-6.198922E-6
+
+---Sum : 3.23 ---- : facteur 1.7
+Fait en sorte que les threads utilisés soient proche les uns desautres.
++ de wrap utilisés en même temps, donc plus rapide
+Reduction of 16777216 elements
+JCuda 3,010ms Copy 5,520ms 
+cuda3.51841498E13
+Calcul exact :3.51843679E13
+Percent :-6.198922E-6
+
+
+--- Sum 3.24 ---  facteur 1.1
+Reduction of 16777216 elements
+JCuda 2,828ms Copy 5,540ms 
+cuda3.51841498E13
+Calcul exact :3.51843679E13
+Percent :-6.198922E-6
